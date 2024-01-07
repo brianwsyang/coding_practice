@@ -8,19 +8,19 @@ Here is his banker plan:
 - Given f0, p, c0, i the banker guarantees that John will be able to go on that way until the nth year.
 
 Example:
-f0 = 100000, p = 1 percent, c0 = 2000, n = 15, i = 1 percent
-beginning of year 2 -> f1 = 100000 + 0.01*100000 - 2000 = 99000;  c1 = c0 + c0*0.01 = 2020 (with inflation of previous year)
-beginning of year 3 -> f2 =  99000 + 0.01*99000 - 2020  = 97970;  c2 = c1 + c1*0.01 = 2040.20 (with inflation of previous year, truncated to 2040)
-beginning of year 4 -> f3 =  97970 + 0.01*97970 - 2040  = 96909.7 (truncated to 96909); c3 = c2 + c2*0.01 = 2060.4 (with inflation of previous year, truncated to 2060)
+- f0 = 100000, p = 1 percent, c0 = 2000, n = 15, i = 1 percent
+- beginning of year 2 -> f1 = 100000 + 0.01*100000 - 2000 = 99000;  c1 = c0 + c0*0.01 = 2020 (with inflation of previous year)
+- beginning of year 3 -> f2 =  99000 + 0.01*99000 - 2020  = 97970;  c2 = c1 + c1*0.01 = 2040.20 (with inflation of previous year, truncated to 2040)
+- beginning of year 4 -> f3 =  97970 + 0.01*97970 - 2040  = 96909.7 (truncated to 96909); c3 = c2 + c2*0.01 = 2060.4 (with inflation of previous year, truncated to 2060)
 
 and so on...
 
 John wants to know if the banker's plan is right or wrong. Given parameters f0, p, c0, n, i build a function fortune which returns true if John can make a living until the nth year and false if it is not possible.
 
 Some cases:
-fortune(100000, 1, 2000, 15, 1) -> True
-fortune(100000, 1, 10000, 10, 1) -> True
-fortune(100000, 1, 9185, 12, 1) -> False
+- fortune(100000, 1, 2000, 15, 1) -> True
+- fortune(100000, 1, 10000, 10, 1) -> True
+- fortune(100000, 1, 9185, 12, 1) -> False
 
 For the last case you can find below the amounts of his account at the beginning of each year:
 100000, 91815, 83457, 74923, 66211, 57318, 48241, 38977, 29523, 19877, 10035, -5
